@@ -137,13 +137,17 @@ const Home: NextPage = () => {
 							<p className='mb-6 opacity-50 text-lg leading-6 '>
 								Front-end developer
 							</p>
-							<div className='flex flex-row gap-3 justify-center'>
-								<Image src={github} alt='github-icon' />
+							<div className='flex flex-row gap-3 justify-center '>
+								<Image
+									src={github}
+									alt='github-icon'
+									className='cursor-pointer hover:opacity-50'
+								/>
 								<Image
 									src={facebook}
 									alt='github-icon'
 									width={36}
-									className='opacity-60'
+									className='opacity-60 cursor-pointer hover:opacity-10'
 								/>
 							</div>
 						</div>
@@ -169,7 +173,7 @@ const Home: NextPage = () => {
 								className='self-center cursor-pointer'></Image>
 						</motion.div>
 
-						<div className='cv self-center flex flex-row '>
+						<div className='cv self-center flex flex-row cursor-pointer hover:opacity-50'>
 							<p>Download CV </p>
 							<Image src={down} alt='download'></Image>
 						</div>
