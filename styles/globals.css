@@ -52,6 +52,7 @@ button {
 	border-radius: 36px;
 	outline: none;
 	margin: 0;
+	overflow: hidden;
 	padding: 0;
 	padding-left: 90px;
 	font-family: 'Montserrat Alternates';

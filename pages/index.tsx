@@ -174,7 +174,7 @@ const Home: NextPage = () => {
 					viewport={{ once: true, amount: 0.8 }}
 					className='subMain border-[#7B4AE2]/20 pt-40 pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
 					<motion.div variants={infoImage}>
-						<Image src={profile} alt='profile' width={400} />
+						<Image src={profile} alt='profile' />
 					</motion.div>
 					<motion.div
 						initial='offscreen'
