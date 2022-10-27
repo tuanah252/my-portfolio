@@ -67,6 +67,7 @@ const Home: NextPage = () => {
 				stiffness: 260,
 				damping: 20,
 				duration: 0.5,
+				delay: 1,
 			},
 		},
 	};
@@ -81,6 +82,7 @@ const Home: NextPage = () => {
 				type: 'spring',
 				bounce: 0.2,
 				duration: 2,
+				delay: 1,
 			},
 		},
 	};
@@ -94,6 +96,7 @@ const Home: NextPage = () => {
 				type: 'spring',
 				bounce: 0.2,
 				duration: 4.5,
+				delay: 1,
 			},
 		},
 	};
@@ -172,7 +175,25 @@ const Home: NextPage = () => {
 						</div>
 					</div>
 				</motion.div>
-
+				<motion.div
+					initial={{ x: 0 }}
+					whileInView={{
+						x: 990,
+						transition: {
+							duration: 5,
+							velocity: 10,
+							stiffness: 3,
+						},
+						transitionEnd: { display: 'none' },
+					}}
+					viewport={{ once: true }}>
+					<Image
+						unoptimized={true}
+						src='https://i.gifer.com/2e05.gif'
+						alt='cat'
+						width={24}
+						height={24}></Image>
+				</motion.div>
 				<motion.div
 					initial='offscreen'
 					whileInView='onscreen'
@@ -274,7 +295,26 @@ const Home: NextPage = () => {
 					</motion.div>
 				</motion.div>
 
-				<motion.div></motion.div>
+				<motion.div>
+					<motion.div
+						initial={{ x: -300 }}
+						whileInView={{
+							x: 0,
+							transition: {
+								type: 'spring',
+								bounce: 0.2,
+								duration: 1,
+							},
+						}}
+						viewport={{ once: true, amount: 0.8 }}
+						className='flex flex-col w-[129] '>
+						<Button text='🔗 Projects' width='w-40'></Button>
+						<motion.h2 className='text-5xl font-extrabold name mb-6'>
+							My Projects
+						</motion.h2>
+					</motion.div>
+					<motion.div className=''></motion.div>
+				</motion.div>
 			</main>
 		</div>
 	);
