@@ -1,3 +1,144 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+	background-color: #090e16;
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 400;
+	src: url(https://fonts.gstatic.com/s/raleway/v28/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCMPrEHJA.woff2)
+		format('woff2');
+	unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+	color: white;
+}
+
+main {
+	width: 1100px;
+}
+.nav {
+	height: 200px;
+	margin-top: 38px;
+	margin-bottom: 88px;
+}
+
+.cv {
+	border: solid 1px rgba(123, 74, 226, 0.5);
+	width: 196px;
+	height: 44px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: rgba(123, 74, 226, 0.5);
+	cursor: pointer;
+}
+
+.name {
+	width: 300px;
+}
+
+.middle {
+	margin-bottom: 284px;
+}
+
+button {
+	appearance: none;
+	width: 390px;
+	border: none;
+	cursor: pointer;
+	background-color: #fff;
+	color: #5e5e5e;
+	border-radius: 36px;
+	outline: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 90px;
+	font-family: 'Montserrat Alternates';
+	font-size: 42px;
+	letter-spacing: -2px;
+	font-weight: 600;
+	line-height: 40px;
+	position: relative;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	box-shadow: 0px 40px 80px 0px rgba(0, 0, 0, 0.05),
+		inset 0px -10px 20px 0px rgba(0, 0, 0, 0.05),
+		0px 10px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.icon {
+	display: block;
+	width: 600px;
+	height: 300px;
+	z-index: 1;
+	pointer-events: none;
+	transform-origin: 50% 52%;
+	filter: grayscale(var(--button-star-greyscale))
+		contrast(var(--button-star-contrast));
+	opacity: 0.3;
+	position: absolute;
+	top: -100px;
+	left: -240px;
+}
+
+.icon canvas {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.label {
+	width: 140px;
+	padding: 20px 0 22px;
+	transform: translateZ(0);
+}
+
+.default {
+	display: block;
+}
+
+.number {
+	padding: 30px 36px;
+	position: relative;
+	transform: translateZ(0);
+}
+
+.number:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 4px;
+	background-color: #e8e8e8;
+	opacity: 0.4;
+}
+
+.current {
+	color: #d9d9d9;
+	opacity: 1;
+	display: block;
+}
+
+.new {
+	color: #fed600;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	right: 0;
+	display: block;
+}
+
+.add {
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transform: translateY(38px);
+	pointer-events: none;
+	color: #d0d0db;
+	display: block;
+}
