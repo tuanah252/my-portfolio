@@ -10,7 +10,7 @@ type Props = {
 };
 
 function StarIcon({ isLiked, isHover }: Props) {
-	const { nodes } = useGLTF('/star-icon.glb');
+	const { nodes } = useGLTF('http://localhost:3000/star-icon.glb');
 
 	return (
 		<Canvas
@@ -49,7 +49,7 @@ function StarIcon({ isLiked, isHover }: Props) {
 						hover: {
 							rotateZ: 0,
 							rotateY: 0.3,
-							scale: 1.3,
+							scale: 1.1,
 							transition: {
 								rotateZ: {
 									duration: 1.5,

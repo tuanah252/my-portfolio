@@ -12,6 +12,7 @@ import { useEffect, useRef, useState, Suspense } from 'react';
 import Button from '../components/button';
 import Textmotion from '../components/textmotion';
 import StarIcon from '../components/star';
+import ImageMotion from '../components/imagemotion';
 
 const Home: NextPage = () => {
 	const iconFadeTransition: Transition = { duration: 0.2, delay: 0.3 };
@@ -69,6 +70,7 @@ const Home: NextPage = () => {
 			},
 		},
 	};
+
 	const infoText: Variants = {
 		offscreen: {
 			x: 1000,
@@ -144,7 +146,10 @@ const Home: NextPage = () => {
 						</div>
 						<motion.div
 							drag={true}
-							whileDrag={{ scale: 1.2 }}
+							whileHover={{
+								scale: 1.2,
+								transition: { duration: 0.2 },
+							}}
 							dragConstraints={{ left: 0, right: 300 }}
 							dragElastic={0.2}
 							dragSnapToOrigin={true}
@@ -171,27 +176,13 @@ const Home: NextPage = () => {
 				<motion.div
 					initial='offscreen'
 					whileInView='onscreen'
-					viewport={{ once: true, amount: 0.8 }}
+					viewport={{ once: true }}
 					className='subMain border-[#7B4AE2]/20 pt-40 h-fit pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
-					<motion.div
+					<ImageMotion
 						variants={infoImage}
-						drag={true}
-						whileDrag={{ scale: 1.2 }}
-						dragConstraints={{ left: 0, right: 300 }}
-						dragElastic={0.2}
-						dragSnapToOrigin={true}
-						dragTransition={{
-							bounceStiffness: 600,
-							bounceDamping: 10,
-						}}>
-						<Image src={profile} draggable='false' alt='profile' />
-					</motion.div>
-					<motion.div
-						initial='offscreen'
-						whileInView='onscreen'
-						viewport={{ once: true, amount: 0.8 }}
-						className='self-center overflow-hidden'>
-						<motion.div>
+						src={profile}></ImageMotion>
+					<motion.div className='self-center'>
+						<motion.div variants={infoImage}>
 							<Button width='w-40 ' text='🧐 About Me'></Button>
 						</motion.div>
 
