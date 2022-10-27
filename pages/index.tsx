@@ -172,16 +172,26 @@ const Home: NextPage = () => {
 					initial='offscreen'
 					whileInView='onscreen'
 					viewport={{ once: true, amount: 0.8 }}
-					className='subMain border-[#7B4AE2]/20 pt-40 pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
-					<motion.div variants={infoImage}>
-						<Image src={profile} alt='profile' />
+					className='subMain border-[#7B4AE2]/20 pt-40 h-fit pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
+					<motion.div
+						variants={infoImage}
+						drag={true}
+						whileDrag={{ scale: 1.2 }}
+						dragConstraints={{ left: 0, right: 300 }}
+						dragElastic={0.2}
+						dragSnapToOrigin={true}
+						dragTransition={{
+							bounceStiffness: 600,
+							bounceDamping: 10,
+						}}>
+						<Image src={profile} draggable='false' alt='profile' />
 					</motion.div>
 					<motion.div
 						initial='offscreen'
 						whileInView='onscreen'
 						viewport={{ once: true, amount: 0.8 }}
-						className='self-center'>
-						<motion.div variants={infoImage}>
+						className='self-center overflow-hidden'>
+						<motion.div>
 							<Button width='w-40 ' text='🧐 About Me'></Button>
 						</motion.div>
 
