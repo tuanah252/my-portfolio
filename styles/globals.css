@@ -17,12 +17,16 @@ html {
 
 main {
 	width: 1000px;
-	overflow-x: hidden;
 }
 .nav {
 	height: 200px;
 	margin-top: 38px;
 	margin-bottom: 88px;
+}
+
+.runningTrack {
+	min-height: 20px;
+	overflow-x: hidden;
 }
 
 .cv {

@@ -328,8 +328,8 @@ const Home: NextPage = () => {
 							},
 						}}
 						viewport={{ once: true, amount: 0.8 }}
-						className='flex flex-col w-[129] mt-10 '>
-						<Button text='🔗 Projects' width='w-40'></Button>
+						className='flex flex-col w-[129] mt-10 self-left  '>
+						<Button text='🔗 Projects' width='w-40 '></Button>
 						<motion.h2 className='text-5xl text-left font-extrabold name mb-6 ml-0'>
 							My Projects
 						</motion.h2>
@@ -382,6 +382,8 @@ const Home: NextPage = () => {
 							<div className='w-full bg-white h-24 z-0 absolute rounded-xl'></div>
 						</motion.div>
 					</motion.div>
+
+					<motion.div></motion.div>
 				</motion.div>
 			</main>
 		</div>
