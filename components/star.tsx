@@ -10,7 +10,7 @@ type Props = {
 };
 
 function StarIcon({ isLiked, isHover }: Props) {
-	const { nodes } = useGLTF('http://localhost:3000/star-icon.glb');
+	const { nodes } = useGLTF('/star-icon.glb');
 
 	return (
 		<Canvas
