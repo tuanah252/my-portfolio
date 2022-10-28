@@ -11,7 +11,7 @@ type props = {
 
 const Navbar: React.FC<props> = (props) => {
 	return (
-		<div className='nav w-full m-0 flex flex-row justify-between rounded-2xl h-16 bg-[#7B4AE2]/20 content-center self-center pr-6 pl-3'>
+		<div className='nav w-full m-0 flex flex-row justify-between rounded-2xl bg-[#7B4AE2]/20 content-center self-center pr-6 pl-3'>
 			<div className=' relative h-12 w-12 self-center'>
 				<Image
 					className='self-center justify-center'

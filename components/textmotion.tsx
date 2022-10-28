@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 type Props = {
-	duration: number;
+	duration?: number;
 	content: string;
 };
 
@@ -23,7 +23,7 @@ function textmotion({ duration, content }: Props) {
 	return (
 		<motion.p
 			variants={infoText}
-			className='text-start mb-3 opacity-50 text-lg leading-6 '>
+			className='text-start mb-3 opacity-50 text-lg leading-6 font-bold'>
 			{content}
 		</motion.p>
 	);

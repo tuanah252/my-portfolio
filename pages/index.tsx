@@ -17,6 +17,7 @@ import ProjectItem from '../components/projectItem';
 import devfinder from '../public/devfinder.png';
 import advice from '../public/advice.png';
 import landing from '../public/landing.png';
+import Imagesicon from '../components/imagesicon';
 
 const Home: NextPage = () => {
 	const iconFadeTransition: Transition = { duration: 0.2, delay: 0.3 };
@@ -117,17 +118,17 @@ const Home: NextPage = () => {
 	};
 
 	return (
-		<div className='bg-[#090E16] flex justify-center '>
+		<div className='bg-[#090E16] flex justify-center  '>
 			<Head>
 				<title>Create Next App</title>
 				<link rel='icon' href='/favicon.ico' />
 				<link
 					rel='stylesheet'
-					href='https://fonts.googleapis.com/css?family=Raleway'
+					href='https://use.typekit.net/ese3zou.css'
 				/>
 			</Head>
 
-			<main className='text-center h-screen flex flex-col conter-center '>
+			<main className='text-center  flex flex-col conter-center '>
 				<Navbar
 					info='Info'
 					projects='Projects'
@@ -146,10 +147,10 @@ const Home: NextPage = () => {
 					<div className='flex justify-between content-center middle '>
 						<div className='self-center flex-start'>
 							<Button width='w-40' text='👋 Greetings!'></Button>
-							<h2 className='text-5xl font-extrabold name mb-6'>
-								Võ Tuấn Anh
+							<h2 className='text-5xl font-bold name mb-6'>
+								Vo Tuan Anh
 							</h2>
-							<p className='mb-6 opacity-50 text-lg leading-6 '>
+							<p className='mb-6 opacity-50 font-bold text-lg leading-6 '>
 								Front-end developer
 							</p>
 							<div className='flex flex-row gap-3 justify-center '>
@@ -219,7 +220,7 @@ const Home: NextPage = () => {
 					initial='offscreen'
 					whileInView='onscreen'
 					viewport={{ once: true }}
-					className='subMain border-[#7B4AE2]/20 pt-40 h-fit pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
+					className='subMain border-[#7B4AE2]/20 mb-24 pt-40 h-fit pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
 					<ImageMotion
 						variants={infoImage}
 						src={profile}></ImageMotion>
@@ -230,8 +231,8 @@ const Home: NextPage = () => {
 
 						<motion.h2
 							variants={infoText}
-							className='text-5xl font-extrabold name mb-3'>
-							Võ Tuấn Anh
+							className='text-5xl font-bold name mb-3'>
+							Vo Tuan Anh
 						</motion.h2>
 						<Textmotion
 							duration={2.2}
@@ -316,7 +317,7 @@ const Home: NextPage = () => {
 					</motion.div>
 				</motion.div>
 
-				<motion.div className='relative flex flex-col justify-between'>
+				<motion.div className='relative h-[500] flex flex-col justify-between'>
 					<motion.div
 						initial={{ x: -300 }}
 						whileInView={{
@@ -330,7 +331,7 @@ const Home: NextPage = () => {
 						viewport={{ once: true, amount: 0.8 }}
 						className='flex flex-col w-[129] mt-10 self-left  '>
 						<Button text='🔗 Projects' width='w-40 '></Button>
-						<motion.h2 className='text-5xl text-left font-extrabold name mb-6 ml-0'>
+						<motion.h2 className='text-5xl text-left font-bold name mb-6 ml-0'>
 							My Projects
 						</motion.h2>
 						<Textmotion
@@ -382,8 +383,23 @@ const Home: NextPage = () => {
 							<div className='w-full bg-white h-24 z-0 absolute rounded-xl'></div>
 						</motion.div>
 					</motion.div>
+				</motion.div>
+				<motion.div className='skills w-full flex flex-col mb-40 items-center'>
+					<Button text='✨ Experience' width='w-40' />
+					<motion.h2 className='text-5xl mb-24 w-fit bold font-bold m-0'>
+						Technologies
+					</motion.h2>
+					<motion.p className='mb-10 font-bold opacity-50 text-lg leading-6'>
+						These are techs that i use daily
+					</motion.p>
+					<Imagesicon />
+				</motion.div>
 
-					<motion.div></motion.div>
+				<motion.div className='mt-24 flex flex-col items-center'>
+					<Button text='📬 Contact' width='w-32' />
+					<motion.div className='text-5xl mb-24 w-fit bold font-bold m-0'>
+						Let's talk!
+					</motion.div>
 				</motion.div>
 			</main>
 		</div>

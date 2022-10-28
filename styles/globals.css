@@ -19,7 +19,7 @@ main {
 	width: 1000px;
 }
 .nav {
-	height: 200px;
+	height: 64px;
 	margin-top: 38px;
 	margin-bottom: 88px;
 }
@@ -46,7 +46,7 @@ main {
 }
 
 .middle {
-	margin-bottom: 284px;
+	margin-bottom: 200px;
 }
 
 button {
@@ -164,4 +164,17 @@ button {
 	height: 500px;
 	marign-bottom: -400px;
 	align-items: end;
+}
+
+.skills {
+	margin-top: 500px;
+}
+
+.bold {
+	font-family: 'Raleway';
+	font-style: normal;
+	font-weight: 1000;
+	font-size: 48px;
+	line-height: 56px;
+	text-align: center;
 }
