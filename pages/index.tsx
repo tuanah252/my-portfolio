@@ -8,7 +8,13 @@ import avatar from '../public/AvatarAndIcons.png';
 import profile from '../public/ProfilePic.png';
 import down from '../public/ArrowLineDown.svg';
 import { animate, motion, Variants, Transition } from 'framer-motion';
-import { useEffect, useRef, useState, Suspense } from 'react';
+import {
+	useEffect,
+	useRef,
+	useState,
+	Suspense,
+	MouseEventHandler,
+} from 'react';
 import Button from '../components/button';
 import Textmotion from '../components/textmotion';
 import StarIcon from '../components/star';
@@ -21,6 +27,7 @@ import Imagesicon from '../components/imagesicon';
 import up from '../public/arrowUp.svg';
 import copy from '../public/copy.svg';
 import email from '../public/email.svg';
+import { useRouter } from 'next/router';
 
 const Home: NextPage = () => {
 	const iconFadeTransition: Transition = { duration: 0.2, delay: 0.3 };
@@ -119,6 +126,13 @@ const Home: NextPage = () => {
 			},
 		},
 	};
+	const [mail, setMail] = useState('tuanah252@gmail.com');
+	const scrollUp: MouseEventHandler<HTMLDivElement> | undefined = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
 
 	return (
 		<div className='bg-[#090E16] flex justify-center  '>
@@ -157,17 +171,27 @@ const Home: NextPage = () => {
 								Front-end developer
 							</p>
 							<div className='flex flex-row gap-3 justify-center '>
-								<Image
-									src={github}
-									alt='github-icon'
-									className='cursor-pointer hover:opacity-50'
-								/>
-								<Image
-									src={facebook}
-									alt='github-icon'
-									width={36}
-									className='opacity-60 cursor-pointer hover:opacity-10'
-								/>
+								<a
+									target='_blank'
+									href='https://github.com/tuanah252'
+									rel='noopener noreferrer'>
+									<Image
+										src={github}
+										alt='github-icon'
+										className='cursor-pointer hover:opacity-50'
+									/>
+								</a>
+								<a
+									target='_blank'
+									href='https://www.facebook.com/votuan.anh.754365'
+									rel='noopener noreferrer'>
+									<Image
+										src={facebook}
+										alt='github-icon'
+										width={36}
+										className='opacity-60 cursor-pointer hover:opacity-10'
+									/>
+								</a>
 							</div>
 						</div>
 						<motion.div
@@ -192,10 +216,15 @@ const Home: NextPage = () => {
 								className='self-center cursor-pointer'></Image>
 						</motion.div>
 
-						<div className='cv self-center flex flex-row cursor-pointer hover:opacity-50'>
-							<p>Download CV </p>
-							<Image src={down} alt='download'></Image>
-						</div>
+						<a
+							href='/CV.txt'
+							download={true}
+							className='self-center'>
+							<div className='cv flex flex-row cursor-pointer hover:opacity-50'>
+								<p>Download CV </p>
+								<Image src={down} alt='download'></Image>
+							</div>
+						</a>
 					</div>
 				</motion.div>
 				<div className='w-full runningTrack  '>
@@ -412,9 +441,12 @@ const Home: NextPage = () => {
 						</div>
 						<div className='flex flex-row justify-between items-center gap-2 '>
 							<p className='text-start  opacity-50 text-lg leading-6 font-bold self-center'>
-								tuanah252@gmail.com
+								{mail}
 							</p>
 							<Image
+								onClick={() => {
+									navigator.clipboard.writeText(mail);
+								}}
 								src={copy}
 								className='cursor-pointer'
 								alt='copy'
@@ -422,9 +454,11 @@ const Home: NextPage = () => {
 						</div>
 					</motion.div>
 
-					<motion.div className='flex flex-row mt-20 cursor-pointer'>
+					<motion.div
+						onClick={scrollUp}
+						className='flex mb-24 flex-row mt-20 cursor-pointer'>
 						<p className='text-start text-[#7B4AE2] opacity-50 text-lg leading-6 font-bold self-center'>
-							Move to Top{' '}
+							Move to Top
 						</p>
 						<Image src={up} alt='uparrow' />
 					</motion.div>

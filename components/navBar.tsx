@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import logo from '../public/logo.svg';
 import Image from 'next/image';
 import bs from '../public/bsheeb.png';
@@ -10,6 +10,30 @@ type props = {
 };
 
 const Navbar: React.FC<props> = (props) => {
+	const scrollInfo: MouseEventHandler<HTMLDivElement> | undefined = () => {
+		window.scrollTo({
+			top: 200,
+			behavior: 'smooth',
+		});
+	};
+	const scrollProject: MouseEventHandler<HTMLDivElement> | undefined = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+	const scrollSkill: MouseEventHandler<HTMLDivElement> | undefined = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
+	const scrollContact: MouseEventHandler<HTMLDivElement> | undefined = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		});
+	};
 	return (
 		<div className='nav w-full m-0 flex flex-row justify-between rounded-2xl bg-[#7B4AE2]/20 content-center self-center pr-6 pl-3'>
 			<div className=' relative h-12 w-12 self-center'>

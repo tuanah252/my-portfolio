@@ -189,3 +189,7 @@ button {
 .contact {
 	height: 400px;
 }
+
+* {
+	scroll-behavior: smooth;
+}
