@@ -18,6 +18,9 @@ import devfinder from '../public/devfinder.png';
 import advice from '../public/advice.png';
 import landing from '../public/landing.png';
 import Imagesicon from '../components/imagesicon';
+import up from '../public/arrowUp.svg';
+import copy from '../public/copy.svg';
+import email from '../public/email.svg';
 
 const Home: NextPage = () => {
 	const iconFadeTransition: Transition = { duration: 0.2, delay: 0.3 };
@@ -395,10 +398,35 @@ const Home: NextPage = () => {
 					<Imagesicon />
 				</motion.div>
 
-				<motion.div className='mt-24 flex flex-col items-center'>
+				<motion.div className='mt-24 flex flex-col items-center contact'>
 					<Button text='📬 Contact' width='w-32' />
-					<motion.div className='text-5xl mb-24 w-fit bold font-bold m-0'>
-						Let's talk!
+					<motion.div className='text-5xl mb-20 w-fit bold font-bold m-0'>
+						Contact
+					</motion.div>
+					<motion.div className='flex h-10 email flex-row justify-center items-center '>
+						<div className='flex flex-row justify-between items-center gap-2'>
+							<Image src={email} alt='email' />
+							<p className='text-start text-[#7B4AE2]/60 text-lg leading-6 font-bold'>
+								E-mail :{' '}
+							</p>
+						</div>
+						<div className='flex flex-row justify-between items-center gap-2 '>
+							<p className='text-start  opacity-50 text-lg leading-6 font-bold self-center'>
+								tuanah252@gmail.com
+							</p>
+							<Image
+								src={copy}
+								className='cursor-pointer'
+								alt='copy'
+							/>
+						</div>
+					</motion.div>
+
+					<motion.div className='flex flex-row mt-20 cursor-pointer'>
+						<p className='text-start text-[#7B4AE2] opacity-50 text-lg leading-6 font-bold self-center'>
+							Move to Top{' '}
+						</p>
+						<Image src={up} alt='uparrow' />
 					</motion.div>
 				</motion.div>
 			</main>
