@@ -18,7 +18,7 @@ const ImageMotion = ({ variants, src }: Props) => {
 				bounceStiffness: 600,
 				bounceDamping: 10,
 			}}>
-			<Image src={src} draggable='false' alt='profile' />
+			<Image width={320} src={src} draggable='false' alt='profile' />
 		</motion.div>
 	);
 };

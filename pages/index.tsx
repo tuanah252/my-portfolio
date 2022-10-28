@@ -13,6 +13,10 @@ import Button from '../components/button';
 import Textmotion from '../components/textmotion';
 import StarIcon from '../components/star';
 import ImageMotion from '../components/imagemotion';
+import ProjectItem from '../components/projectItem';
+import devfinder from '../public/devfinder.png';
+import advice from '../public/advice.png';
+import landing from '../public/landing.png';
 
 const Home: NextPage = () => {
 	const iconFadeTransition: Transition = { duration: 0.2, delay: 0.3 };
@@ -67,7 +71,6 @@ const Home: NextPage = () => {
 				stiffness: 260,
 				damping: 20,
 				duration: 0.5,
-				delay: 1,
 			},
 		},
 	};
@@ -82,7 +85,6 @@ const Home: NextPage = () => {
 				type: 'spring',
 				bounce: 0.2,
 				duration: 2,
-				delay: 1,
 			},
 		},
 	};
@@ -97,6 +99,19 @@ const Home: NextPage = () => {
 				bounce: 0.2,
 				duration: 4.5,
 				delay: 1,
+			},
+		},
+	};
+
+	const jumpdown: Variants = {
+		unseen: {
+			y: -400,
+		},
+		seen: {
+			y: 0,
+			transition: {
+				bounce: 0.4,
+				duration: 1,
 			},
 		},
 	};
@@ -179,25 +194,27 @@ const Home: NextPage = () => {
 						</div>
 					</div>
 				</motion.div>
-				<motion.div
-					initial={{ x: 0 }}
-					whileInView={{
-						x: 990,
-						transition: {
-							duration: 5,
-							velocity: 10,
-							stiffness: 3,
-						},
-						transitionEnd: { display: 'none' },
-					}}
-					viewport={{ once: true }}>
-					<Image
-						unoptimized={true}
-						src='https://i.gifer.com/2e05.gif'
-						alt='cat'
-						width={24}
-						height={24}></Image>
-				</motion.div>
+				<div className='w-full runningTrack  '>
+					<motion.div
+						initial={{ x: 0, scale: 1 }}
+						whileInView={{
+							x: 990,
+							transition: {
+								duration: 10,
+								velocity: 5,
+								stiffness: 2,
+							},
+							transitionEnd: { scale: 0 },
+						}}
+						viewport={{ once: true }}>
+						<Image
+							unoptimized={true}
+							src='https://i.gifer.com/2e05.gif'
+							alt='cat'
+							width={24}
+							height={24}></Image>
+					</motion.div>
+				</div>
 				<motion.div
 					initial='offscreen'
 					whileInView='onscreen'
@@ -299,7 +316,7 @@ const Home: NextPage = () => {
 					</motion.div>
 				</motion.div>
 
-				<motion.div>
+				<motion.div className='relative flex flex-col justify-between'>
 					<motion.div
 						initial={{ x: -300 }}
 						whileInView={{
@@ -311,13 +328,60 @@ const Home: NextPage = () => {
 							},
 						}}
 						viewport={{ once: true, amount: 0.8 }}
-						className='flex flex-col w-[129] '>
+						className='flex flex-col w-[129] mt-10 '>
 						<Button text='🔗 Projects' width='w-40'></Button>
-						<motion.h2 className='text-5xl font-extrabold name mb-6'>
+						<motion.h2 className='text-5xl text-left font-extrabold name mb-6 ml-0'>
 							My Projects
 						</motion.h2>
+						<Textmotion
+							content='These are projects that i have made in my learning period. '
+							duration={2}></Textmotion>
 					</motion.div>
-					<motion.div className=''></motion.div>
+
+					<motion.div className='absolute overflow-hidden w-full'>
+						<motion.div className='relative flex flex-col h-fit justify-end '>
+							<motion.div
+								initial='unseen'
+								whileInView='seen'
+								variants={jumpdown}
+								viewport={{ once: true }}
+								className='flex flex-row justify-center project-holder gap-3 z-10 '>
+								<ProjectItem
+									src={devfinder}
+									name='Dev Finder'
+									num={4}
+									projects={{
+										cn1: 'Typescript',
+										cn2: 'NextJS',
+										cn3: 'Axios',
+										cn4: 'Bootstrap',
+									}}
+									info='this is the infomation about my pro this is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my pro '></ProjectItem>
+								<ProjectItem
+									src={advice}
+									name='Advice Generator'
+									num={4}
+									projects={{
+										cn1: 'Typescript',
+										cn2: 'NextJS',
+										cn3: 'Axios',
+										cn4: 'Tailwind',
+									}}
+									info='this is the infomation about my pro this is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my pro'></ProjectItem>
+								<ProjectItem
+									src={landing}
+									name='Info Landing Page'
+									num={3}
+									projects={{
+										cn1: 'JavaScript',
+										cn2: 'HTML',
+										cn3: 'CSS',
+									}}
+									info='this is the infomation about my pro this is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my pro'></ProjectItem>
+							</motion.div>
+							<div className='w-full bg-white h-24 z-0 absolute rounded-xl'></div>
+						</motion.div>
+					</motion.div>
 				</motion.div>
 			</main>
 		</div>

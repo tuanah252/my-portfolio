@@ -44,7 +44,11 @@ function StarIcon({ isLiked, isHover }: Props) {
 							x: 4,
 							y: [0, -1.5, 2],
 							scale: 0.9,
-							transition: { duration: 0.5 },
+							transition: {
+								duration: 4,
+								velocity: 10,
+								shiftness: 2,
+							},
 						},
 						hover: {
 							rotateZ: 0,

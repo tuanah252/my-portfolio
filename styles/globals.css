@@ -143,3 +143,18 @@ button {
 	color: #d0d0db;
 	display: block;
 }
+
+.project {
+	width: 320px;
+	height: 800px;
+	border-radius-top: 24px;
+	transform-origin: 10% 60%;
+	cursor: pointer;
+}
+
+.project-holder {
+	overflow: hidden;
+	height: 500px;
+	marign-bottom: -400px;
+	align-items: end;
+}

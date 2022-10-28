@@ -16,7 +16,6 @@ function textmotion({ duration, content }: Props) {
 				type: 'spring',
 				bounce: 0.2,
 				duration: duration,
-				delay: 1,
 			},
 		},
 	};
