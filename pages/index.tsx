@@ -152,6 +152,30 @@ const Home: NextPage = () => {
 			},
 		},
 	};
+	const contactUp: Variants = {
+		offscreen: {
+			y: 1000,
+		},
+		onscreen: {
+			y: 0,
+			transition: {
+				bounce: 0.2,
+				duration: 2,
+			},
+		},
+	};
+	const contactDown: Variants = {
+		offscreen: {
+			y: -1000,
+		},
+		onscreen: {
+			y: 0,
+			transition: {
+				bounce: 0.2,
+				duration: 2,
+			},
+		},
+	};
 
 	const [copier, setCopier] = useState(copy);
 	const [mail, setMail] = useState('tuanah252@gmail.com');
@@ -174,11 +198,7 @@ const Home: NextPage = () => {
 			</Head>
 
 			<main className='text-center  flex flex-col conter-center '>
-				<Navbar
-					info='Info'
-					projects='Projects'
-					skills='Skills'
-					contact='Contact'></Navbar>
+				<Navbar info='How I Built This'></Navbar>
 
 				<motion.div
 					initial={{ scale: 0 }}
@@ -431,7 +451,7 @@ const Home: NextPage = () => {
 										cn3: 'Axios',
 										cn4: 'Bootstrap',
 									}}
-									info='this is the infomation about my pro this is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my pro '></ProjectItem>
+									info='In this project, i used NextJS framework to build this page, then I use Axios library to call API from github and use it to render to interface after received information input from user and finally I used BootStrap to decorating'></ProjectItem>
 								<ProjectItem
 									src={advice}
 									name='Advice Generator'
@@ -485,14 +505,18 @@ const Home: NextPage = () => {
 					initial='offscreen'
 					whileInView='onscreen'
 					viewport={{ once: true }}
-					className='mt-24 flex flex-col items-center contact'>
+					className='mt-24 flex flex-col items-center contact overflow-hidden'>
 					<motion.div variants={infoImage}>
 						<Button text='📬 Contact' width='w-32' />
 					</motion.div>
-					<motion.div className='text-5xl mb-20 w-fit bold font-bold m-0'>
-						Contact
+					<motion.div
+						variants={contactDown}
+						className='text-5xl mb-20 w-fit bold font-bold m-0'>
+						Contact Info
 					</motion.div>
-					<motion.div className='flex h-10 email flex-row justify-center items-center '>
+					<motion.div
+						variants={contactUp}
+						className='flex h-10 email flex-row justify-center items-center '>
 						<div className='flex flex-row justify-between items-center gap-2'>
 							<Image src={email} alt='email' />
 							<p className='text-start text-[#7B4AE2]/60 text-lg leading-6 font-bold'>
@@ -518,12 +542,19 @@ const Home: NextPage = () => {
 					</motion.div>
 
 					<motion.div
+						initial='offscreen'
+						whileInView='onscreen'
+						viewport={{ once: true }}
 						onClick={scrollUp}
 						className='flex mb-24 flex-row mt-20 cursor-pointer'>
-						<p className='text-start text-[#7B4AE2] opacity-50 text-lg leading-6 font-bold self-center'>
-							Move to Top
-						</p>
-						<Image src={up} alt='uparrow' />
+						<motion.div
+							variants={contactUp}
+							className='flex flex-row cursor-pointer'>
+							<p className='text-start text-[#7B4AE2] opacity-50 text-lg leading-6 font-bold self-center'>
+								Move to Top
+							</p>
+							<Image src={up} alt='uparrow' />
+						</motion.div>
 					</motion.div>
 				</motion.div>
 			</main>
