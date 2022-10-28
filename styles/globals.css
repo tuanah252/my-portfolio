@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+::-webkit-scrollbar {
+	display: none;
+}
 html {
 	background-color: #090e16;
 	font-family: 'Raleway';
@@ -15,6 +17,7 @@ html {
 
 main {
 	width: 1000px;
+	overflow-x: hidden;
 }
 .nav {
 	height: 200px;
