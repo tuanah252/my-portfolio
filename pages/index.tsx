@@ -28,6 +28,7 @@ import up from '../public/arrowUp.svg';
 import copy from '../public/copy.svg';
 import email from '../public/email.svg';
 import { useRouter } from 'next/router';
+import copied from '../public/copied.svg';
 
 const Home: NextPage = () => {
 	const iconFadeTransition: Transition = { duration: 0.2, delay: 0.3 };
@@ -126,6 +127,33 @@ const Home: NextPage = () => {
 			},
 		},
 	};
+
+	const technologiesRight: Variants = {
+		offscreen: {
+			x: 1000,
+		},
+		onscreen: {
+			x: 0,
+			transition: {
+				bounce: 0.2,
+				duration: 2,
+			},
+		},
+	};
+	const technologiesleft: Variants = {
+		offscreen: {
+			x: -1000,
+		},
+		onscreen: {
+			x: 0,
+			transition: {
+				bounce: 0.2,
+				duration: 2,
+			},
+		},
+	};
+
+	const [copier, setCopier] = useState(copy);
 	const [mail, setMail] = useState('tuanah252@gmail.com');
 	const scrollUp: MouseEventHandler<HTMLDivElement> | undefined = () => {
 		window.scrollTo({
@@ -135,10 +163,10 @@ const Home: NextPage = () => {
 	};
 
 	return (
-		<div className='bg-[#090E16] flex justify-center  '>
+		<div className='bg-[#090E16] flex justify-center '>
 			<Head>
-				<title>Create Next App</title>
-				<link rel='icon' href='/favicon.ico' />
+				<title>Blasheeb</title>
+				<link rel='icon' href='/bsheeb.png' />
 				<link
 					rel='stylesheet'
 					href='https://use.typekit.net/ese3zou.css'
@@ -206,16 +234,23 @@ const Home: NextPage = () => {
 							dragTransition={{
 								bounceStiffness: 600,
 								bounceDamping: 10,
-							}}>
+							}}
+							className='z-50'>
 							<Image
 								src={avatar}
 								draggable='false'
 								alt='avatar'
 								width={516}
 								height={516}
-								className='self-center cursor-pointer'></Image>
+								className='self-center z-10 cursor-pointer'></Image>
 						</motion.div>
-
+						<Image
+							unoptimized={true}
+							className='absolute z-0 catty'
+							src='https://i.gifer.com/YMga.gif'
+							alt='cat'
+							width={200}
+							height={200}></Image>
 						<a
 							href='/CV.txt'
 							download={true}
@@ -239,7 +274,14 @@ const Home: NextPage = () => {
 							},
 							transitionEnd: { scale: 0 },
 						}}
+						className='flex flex-row cursor-pointer gap-10'
 						viewport={{ once: true }}>
+						<Image
+							unoptimized={true}
+							src='https://i.gifer.com/1FND.gif'
+							alt='rabbit'
+							width={24}
+							height={24}></Image>
 						<Image
 							unoptimized={true}
 							src='https://i.gifer.com/2e05.gif'
@@ -252,7 +294,7 @@ const Home: NextPage = () => {
 					initial='offscreen'
 					whileInView='onscreen'
 					viewport={{ once: true }}
-					className='subMain border-[#7B4AE2]/20 mb-24 pt-40 h-fit pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
+					className='subMain overflow-hidden border-[#7B4AE2]/20 mb-24 pt-40 h-fit pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
 					<ImageMotion
 						variants={infoImage}
 						src={profile}></ImageMotion>
@@ -416,19 +458,37 @@ const Home: NextPage = () => {
 						</motion.div>
 					</motion.div>
 				</motion.div>
-				<motion.div className='skills w-full flex flex-col mb-40 items-center'>
-					<Button text='✨ Experience' width='w-40' />
-					<motion.h2 className='text-5xl mb-24 w-fit bold font-bold m-0'>
+				<motion.div
+					initial='offscreen'
+					whileInView='onscreen'
+					viewport={{ once: true }}
+					className='skills overflow-hidden w-full flex flex-col mb-40 items-center'>
+					<motion.div variants={infoImage}>
+						<Button text='✨ Experience' width='w-40' />
+					</motion.div>
+					<motion.h2
+						variants={technologiesRight}
+						className='text-5xl mb-10 w-fit bold font-bold m-0'>
 						Technologies
 					</motion.h2>
-					<motion.p className='mb-10 font-bold opacity-50 text-lg leading-6'>
-						These are techs that i use daily
+					<motion.p
+						variants={technologiesleft}
+						className='mb-10 font-bold opacity-50 text-lg leading-6'>
+						These are techs that i use to improve my skills daily
 					</motion.p>
-					<Imagesicon />
+					<motion.div variants={technologiesRight}>
+						<Imagesicon />
+					</motion.div>
 				</motion.div>
 
-				<motion.div className='mt-24 flex flex-col items-center contact'>
-					<Button text='📬 Contact' width='w-32' />
+				<motion.div
+					initial='offscreen'
+					whileInView='onscreen'
+					viewport={{ once: true }}
+					className='mt-24 flex flex-col items-center contact'>
+					<motion.div variants={infoImage}>
+						<Button text='📬 Contact' width='w-32' />
+					</motion.div>
 					<motion.div className='text-5xl mb-20 w-fit bold font-bold m-0'>
 						Contact
 					</motion.div>
@@ -446,10 +506,13 @@ const Home: NextPage = () => {
 							<Image
 								onClick={() => {
 									navigator.clipboard.writeText(mail);
+									setCopier(copied);
 								}}
-								src={copy}
+								src={copier}
 								className='cursor-pointer'
 								alt='copy'
+								width={32}
+								height={32}
 							/>
 						</div>
 					</motion.div>

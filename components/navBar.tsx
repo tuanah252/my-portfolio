@@ -45,10 +45,18 @@ const Navbar: React.FC<props> = (props) => {
 			</div>
 
 			<div className='flex flex-row text-white/50  self-center font-normal text-lg h-16'>
-				<p className='ml-4 h-fit self-center'>{props.info}</p>
-				<p className='ml-4 h-fit self-center'>{props.projects}</p>
-				<p className='ml-4 h-fit self-center'>{props.skills}</p>
-				<p className='ml-4 h-fit self-center'>{props.contact}</p>
+				<p className='cursor-pointer ml-4 h-fit self-center'>
+					{props.info}
+				</p>
+				<p className='cursor-pointer ml-4 h-fit self-center'>
+					{props.projects}
+				</p>
+				<p className='cursor-pointer ml-4 h-fit self-center'>
+					{props.skills}
+				</p>
+				<p className='cursor-pointer ml-4 h-fit self-center'>
+					{props.contact}
+				</p>
 			</div>
 		</div>
 	);

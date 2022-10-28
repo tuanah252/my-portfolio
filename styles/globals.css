@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-::-webkit-scrollbar {
+*::-webkit-scrollbar {
 	display: none;
 }
 html {
@@ -40,7 +40,10 @@ main {
 	color: rgba(123, 74, 226, 0.5);
 	cursor: pointer;
 }
-
+.catty {
+	transform: translate(460px, 120px);
+	z-index: 0;
+}
 .name {
 	width: 300px;
 }

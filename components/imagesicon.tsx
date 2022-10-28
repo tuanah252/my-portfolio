@@ -16,19 +16,105 @@ import Image from 'next/image';
 type Props = {};
 
 export default function Imagesicon({}: Props) {
+	const icon = {
+		hidden: {
+			pathLength: 0,
+		},
+		visible: {
+			pathLength: 1,
+		},
+	};
+
 	return (
 		<motion.div className='flex flex-row gap-10'>
-			<Image src={react} alt='icon' />
-			<Image src={javascript} alt='icon' />
-			<Image src={typescript} alt='icon' />
-			<Image src={tailwindcss} alt='icon' />
-			<Image src={next} alt='icon' />
-			<Image src={scss} alt='icon' />
-			<Image src={htmlcss} alt='icon' />
-			<Image src={figma} alt='icon' />
-			<Image src={github2} alt='icon' />
-			<Image src={git} alt='icon' />
-			<Image src={insomnia} alt='icon' />
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={react}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={javascript}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={typescript}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={tailwindcss}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={next}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={scss}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={htmlcss}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={figma}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={github2}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={git}
+					alt='icon'
+				/>
+			</motion.div>
+			<motion.div>
+				<Image
+					draggable={false}
+					className='cursor-pointer hover:opacity-50'
+					src={insomnia}
+					alt='icon'
+				/>
+			</motion.div>
 		</motion.div>
 	);
 }
