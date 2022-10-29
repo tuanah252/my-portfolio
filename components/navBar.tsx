@@ -10,7 +10,7 @@ type props = {
 
 const Navbar: React.FC<props> = (props) => {
 	return (
-		<div className='nav w-full m-0 flex flex-row justify-between rounded-2xl bg-[#7B4AE2]/20 content-center self-center pr-6 pl-3'>
+		<div className='nav w-full m-0 flex flex-row justify-between  rounded-2xl bg-[#7B4AE2]/20 content-center self-center pr-6 pl-3'>
 			<div className=' relative h-12 w-12 self-center'>
 				<Image
 					className='self-center justify-center'
@@ -19,7 +19,7 @@ const Navbar: React.FC<props> = (props) => {
 					fill></Image>
 			</div>
 
-			<div className='flex flex-row text-white/50  self-center font-normal text-lg h-16'>
+			<div className='flex flex-row text-white/50  self-center font-bold text-lg h-16'>
 				<Link
 					href='/#'
 					className='cursor-pointer ml-4 h-fit self-center'>
