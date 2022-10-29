@@ -187,7 +187,7 @@ const Home: NextPage = () => {
 	};
 
 	return (
-		<div className='bg-[#090E16] flex justify-center '>
+		<div className='bg-[#090E16] grid rid-row justify-center '>
 			<Head>
 				<title>Blasheeb</title>
 				<link rel='icon' href='/bsheeb.png' />
@@ -197,8 +197,8 @@ const Home: NextPage = () => {
 				/>
 			</Head>
 
-			<main className='text-center  flex flex-col conter-center '>
-				<Navbar info='How I Built This'></Navbar>
+			<main className='text-center  grid grid-rows-7 conter-center '>
+				<Navbar info='How I Built This' home='Home'></Navbar>
 
 				<motion.div
 					initial={{ scale: 0 }}

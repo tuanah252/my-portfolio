@@ -5,6 +5,7 @@ import bs from '../public/bsheeb.png';
 import Link from 'next/link';
 type props = {
 	info: string;
+	home: string;
 };
 
 const Navbar: React.FC<props> = (props) => {
@@ -19,6 +20,11 @@ const Navbar: React.FC<props> = (props) => {
 			</div>
 
 			<div className='flex flex-row text-white/50  self-center font-normal text-lg h-16'>
+				<Link
+					href='/#'
+					className='cursor-pointer ml-4 h-fit self-center'>
+					<p className=' h-fit self-center'>{props.home}</p>
+				</Link>
 				<Link
 					href='/howibuiltthis'
 					className='cursor-pointer ml-4 h-fit self-center'>
