@@ -29,6 +29,7 @@ import copy from '../public/copy.svg';
 import email from '../public/email.svg';
 import { useRouter } from 'next/router';
 import copied from '../public/copied.svg';
+import { SiGithub, SiFacebook } from 'react-icons/si';
 
 const Home: NextPage = () => {
 	const iconFadeTransition: Transition = { duration: 0.2, delay: 0.3 };
@@ -222,21 +223,18 @@ const Home: NextPage = () => {
 										target='_blank'
 										href='https://github.com/tuanah252'
 										rel='noopener noreferrer'>
-										<Image
-											src={github}
-											alt='github-icon'
-											className='cursor-pointer hover:opacity-50'
+										<SiGithub
+											size={36}
+											className='cursor-pointer opacity-40 hover:opacity-80'
 										/>
 									</a>
 									<a
 										target='_blank'
 										href='https://www.facebook.com/votuan.anh.754365'
 										rel='noopener noreferrer'>
-										<Image
-											src={facebook}
-											alt='github-icon'
-											width={36}
-											className='opacity-60 cursor-pointer hover:opacity-10'
+										<SiFacebook
+											size={36}
+											className='cursor-pointer opacity-40 hover:opacity-80'
 										/>
 									</a>
 								</div>
@@ -443,6 +441,9 @@ const Home: NextPage = () => {
 									viewport={{ once: true }}
 									className='flex flex-row justify-center gap-10 project-holder gap-3 z-10 '>
 									<ProjectItem
+										pos={280}
+										link2='https://github-user-finder-ten.vercel.app/'
+										link='https://github.com/tuanah252/github-user-finder'
 										src={devfinder}
 										name='Dev Finder'
 										num={4}
@@ -454,6 +455,9 @@ const Home: NextPage = () => {
 										}}
 										info='In this project, i used NextJS framework to build this page, then I use Axios library to fetch API from github and use it to render to interface after received information input from user and finally I used BootStrap and SCSS to decorate'></ProjectItem>
 									<ProjectItem
+										pos={340}
+										link2='https://advice-generator-phi-bice.vercel.app/'
+										link='https://github.com/tuanah252/advice-generator'
 										src={advice}
 										name='Advice Generator'
 										num={4}
@@ -465,13 +469,17 @@ const Home: NextPage = () => {
 										}}
 										info='I built this project with NextJS and used Axios to fetch API from database, then render it out to interface and fully decorated with Tailwindcss '></ProjectItem>
 									<ProjectItem
+										pos={370}
+										link2='https://short-link-github-io.vercel.app/'
+										link='https://github.com/tuanah252/ShortLink.github.io'
 										src={shortlink}
 										name='Link Shortener'
-										num={3}
+										num={4}
 										projects={{
 											cn1: 'JavaScript',
-											cn2: 'HTML',
-											cn3: 'CSS',
+											cn2: 'ReactJS',
+											cn3: 'SCSS',
+											cn4: 'Axios',
 										}}
 										info='This is project I built using ReactJS, and decorating with SCSS. Get API from shrtcode API to shorten input link '></ProjectItem>
 								</motion.div>
@@ -522,7 +530,7 @@ const Home: NextPage = () => {
 							<div className='flex flex-row justify-between items-center gap-2'>
 								<Image src={email} alt='email' />
 								<p className='text-start text-[#7B4AE2]/60 text-lg leading-6 font-bold'>
-									E-mail :{' '}
+									E-mail :
 								</p>
 							</div>
 							<div className='flex flex-row justify-between items-center gap-2 '>

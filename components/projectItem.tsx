@@ -2,6 +2,10 @@ import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
+import github from '../public/github.svg';
+import vercel2 from '../public/vercel2.png';
+import { SiGithub } from 'react-icons/si';
+import { IoRocketOutline } from 'react-icons/io5';
 
 type Props = {
 	src: any;
@@ -15,6 +19,9 @@ type Props = {
 	};
 	info: string;
 	variants?: any;
+	link: string;
+	link2: string;
+	pos: number;
 };
 
 function isthree(
@@ -65,10 +72,13 @@ export default function projectItem({
 	projects,
 	info,
 	variants,
+	link,
+	link2,
+	pos,
 }: Props) {
 	const [position, setPosition] = useState(540);
 	const onRelease = () => {
-		setPosition(340);
+		setPosition(pos);
 	};
 	const onHoverEnd = () => {
 		setPosition(540);
@@ -128,6 +138,21 @@ export default function projectItem({
 				<p className='text-start mb-3 opacity-50 text-lg leading-6 mb-6'>
 					{info}
 				</p>
+				<div className='w-full flex flex-row items-center justify-center gap-6'>
+					<a target='_blank' href={link} rel='noopener noreferrer'>
+						<SiGithub
+							size={36}
+							className='cursor-pointer opacity-40 hover:opacity-80'
+						/>
+					</a>
+					<a target='_blank' href={link2} rel='noopener noreferrer'>
+						<IoRocketOutline
+							color='white'
+							size={38}
+							className='cursor-pointer opacity-40 hover:opacity-80'
+						/>
+					</a>
+				</div>
 			</div>
 		</motion.div>
 	);
