@@ -27,18 +27,32 @@ function isthree(
 	if (num === 3) {
 		return (
 			<>
-				<p className='mb-3 opacity-50 text-lg leading-6  '>{cn1}</p>
-				<p className='mb-3 opacity-50 text-lg leading-6 '>{cn2}</p>
-				<p className='mb-3 opacity-50 text-lg leading-6 '>{cn3}</p>
+				<p className='mb-3 font-bold  opacity-50 text-lg leading-6  '>
+					{cn1}
+				</p>
+				<p className='mb-3 font-bold  opacity-50 text-lg leading-6 '>
+					{cn2}
+				</p>
+				<p className='mb-3 font-bold  opacity-50 text-lg leading-6 '>
+					{cn3}
+				</p>
 			</>
 		);
 	} else {
 		return (
 			<>
-				<p className='mb-3 opacity-50 text-lg leading-6 '>{cn1}</p>
-				<p className='mb-3 opacity-50 text-lg leading-6 '>{cn2}</p>
-				<p className='mb-3 opacity-50 text-lg leading-6 '>{cn3}</p>
-				<p className='mb-3 opacity-50 text-lg leading-6 '>{cn4}</p>
+				<p className='mb-3 font-bold  opacity-50 text-lg leading-6 '>
+					{cn1}
+				</p>
+				<p className='mb-3 font-bold  opacity-50 text-lg leading-6 '>
+					{cn2}
+				</p>
+				<p className='mb-3 font-bold  opacity-50 text-lg leading-6 '>
+					{cn3}
+				</p>
+				<p className='mb-3 font-bold  opacity-50 text-lg leading-6 '>
+					{cn4}
+				</p>
 			</>
 		);
 	}

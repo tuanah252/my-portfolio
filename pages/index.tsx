@@ -412,7 +412,7 @@ const Home: NextPage = () => {
 						</motion.div>
 					</motion.div>
 
-					<motion.div className='relative h-[500] flex flex-col justify-between'>
+					<motion.div className='relative  h-[500] flex flex-col justify-between'>
 						<motion.div
 							initial={{ x: -300 }}
 							whileInView={{
@@ -483,7 +483,7 @@ const Home: NextPage = () => {
 						initial='offscreen'
 						whileInView='onscreen'
 						viewport={{ once: true }}
-						className='skills overflow-hidden w-full flex flex-col mb-40 items-center'>
+						className='skills overflow-hidden w-full flex flex-col items-center'>
 						<motion.div variants={infoImage}>
 							<Button text='✨ Experience' width='w-40' />
 						</motion.div>
