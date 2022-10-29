@@ -83,7 +83,7 @@ const Home: NextPage = () => {
 				type: 'spring',
 				stiffness: 260,
 				damping: 20,
-				duration: 0.5,
+				duration: 1,
 			},
 		},
 	};
@@ -155,7 +155,7 @@ const Home: NextPage = () => {
 	};
 	const contactUp: Variants = {
 		offscreen: {
-			y: 1000,
+			y: 500,
 		},
 		onscreen: {
 			y: 0,
@@ -167,7 +167,7 @@ const Home: NextPage = () => {
 	};
 	const contactDown: Variants = {
 		offscreen: {
-			y: -1000,
+			y: -500,
 		},
 		onscreen: {
 			y: 0,
@@ -269,7 +269,7 @@ const Home: NextPage = () => {
 								width={200}
 								height={200}></Image>
 							<a
-								href='/CV.txt'
+								href='/CV-VoTuanAnh.pdf'
 								download={true}
 								className='self-center'>
 								<div className='cv flex flex-row cursor-pointer hover:opacity-50'>
@@ -313,7 +313,7 @@ const Home: NextPage = () => {
 						viewport={{ once: true }}
 						className='subMain overflow-hidden border-[#7B4AE2]/20 mb-24 border-b-2   pb-40  divide-solid flex flex-row justify-between content-center'>
 						<ImageMotion
-							variants={infoImage}
+							variants={technologiesleft}
 							src={profile}></ImageMotion>
 						<motion.div className='self-center'>
 							<motion.div variants={infoImage}>
@@ -439,7 +439,7 @@ const Home: NextPage = () => {
 									whileInView='seen'
 									variants={jumpdown}
 									viewport={{ once: true }}
-									className='flex flex-row justify-center gap-10 project-holder gap-3 z-10 '>
+									className='flex flex-row justify-center gap-10  project-holder gap-3 z-10 '>
 									<ProjectItem
 										pos={280}
 										link2='https://github-user-finder-ten.vercel.app/'
@@ -487,11 +487,12 @@ const Home: NextPage = () => {
 							</motion.div>
 						</motion.div>
 					</motion.div>
+
 					<motion.div
 						initial='offscreen'
 						whileInView='onscreen'
 						viewport={{ once: true }}
-						className='skills overflow-hidden w-full flex flex-col items-center'>
+						className='skills overflow-hidden border-[#7B4AE2]/20 mb-24 border-b-2 border-t-2  w-full flex flex-col justify-center items-center'>
 						<motion.div variants={infoImage}>
 							<Button text='✨ Experience' width='w-40' />
 						</motion.div>
@@ -515,7 +516,7 @@ const Home: NextPage = () => {
 						initial='offscreen'
 						whileInView='onscreen'
 						viewport={{ once: true }}
-						className='mt-24 flex flex-col items-center contact overflow-hidden'>
+						className='mt-24 mb-36 flex flex-col items-center contact overflow-hidden'>
 						<motion.div variants={infoImage}>
 							<Button text='📬 Contact' width='w-32' />
 						</motion.div>
@@ -530,7 +531,7 @@ const Home: NextPage = () => {
 							<div className='flex flex-row justify-between items-center gap-2'>
 								<Image src={email} alt='email' />
 								<p className='text-start text-[#7B4AE2]/60 text-lg leading-6 font-bold'>
-									E-mail :
+									E-mail :{' '}
 								</p>
 							</div>
 							<div className='flex flex-row justify-between items-center gap-2 '>

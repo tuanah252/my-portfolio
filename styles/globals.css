@@ -168,6 +168,8 @@ button {
 	border-radius-top: 24px;
 	transform-origin: 10% 60%;
 	cursor: pointer;
+	box-shadow: 0 0 0px rgb(0, 0, 0), 0 0 2px, 0 0 4px, 0 0 8px,
+		0 0 16px rgb(0, 0, 0);
 }
 
 .project-holder {
@@ -178,6 +180,7 @@ button {
 }
 
 .skills {
+	height: 700px;
 	margin-top: 600px;
 	margin-bottom: 250px;
 }
