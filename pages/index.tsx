@@ -155,7 +155,7 @@ const Home: NextPage = () => {
 	};
 	const contactUp: Variants = {
 		offscreen: {
-			y: 500,
+			y: 100,
 		},
 		onscreen: {
 			y: 0,
@@ -167,7 +167,7 @@ const Home: NextPage = () => {
 	};
 	const contactDown: Variants = {
 		offscreen: {
-			y: -500,
+			y: -100,
 		},
 		onscreen: {
 			y: 0,
@@ -269,7 +269,7 @@ const Home: NextPage = () => {
 								width={200}
 								height={200}></Image>
 							<a
-								href='/CV-VoTuanAnh.pdf'
+								href='/CV.txt'
 								download={true}
 								className='self-center'>
 								<div className='cv flex flex-row cursor-pointer hover:opacity-50'>
@@ -516,7 +516,7 @@ const Home: NextPage = () => {
 						initial='offscreen'
 						whileInView='onscreen'
 						viewport={{ once: true }}
-						className='mt-24 mb-36 flex flex-col items-center contact overflow-hidden'>
+						className='mt-2 mb-36 flex flex-col items-center contact overflow-hidden'>
 						<motion.div variants={infoImage}>
 							<Button text='📬 Contact' width='w-32' />
 						</motion.div>
@@ -557,7 +557,7 @@ const Home: NextPage = () => {
 							whileInView='onscreen'
 							viewport={{ once: true }}
 							onClick={scrollUp}
-							className='flex mb-24 flex-row mt-20 cursor-pointer'>
+							className='flex mb-24 flex-row mt-32 cursor-pointer'>
 							<motion.div
 								variants={contactUp}
 								className='flex flex-row cursor-pointer'>
