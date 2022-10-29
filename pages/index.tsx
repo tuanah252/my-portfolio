@@ -281,7 +281,7 @@ const Home: NextPage = () => {
 							</a>
 						</div>
 					</motion.div>
-					<div className='w-full runningTrack  '>
+					<div className='w-full runningTrack mb-20 border-[#7B4AE2]/20 mb-24 border-b-2 '>
 						<motion.div
 							initial={{ x: -70, scale: 1 }}
 							whileInView={{
@@ -313,7 +313,7 @@ const Home: NextPage = () => {
 						initial='offscreen'
 						whileInView='onscreen'
 						viewport={{ once: true }}
-						className='subMain overflow-hidden border-[#7B4AE2]/20 mb-24 pt-40 h-fit pb-40 border-t-2 border-b-2  divide-solid flex flex-row justify-between content-center'>
+						className='subMain overflow-hidden border-[#7B4AE2]/20 mb-24 border-b-2   pb-40  divide-solid flex flex-row justify-between content-center'>
 						<ImageMotion
 							variants={infoImage}
 							src={profile}></ImageMotion>

@@ -34,6 +34,7 @@ html::-webkit-scrollbar {
 
 .runningTrack::-webkit-scrollbar {
 	display: none;
+	margin-bottom: 160px;
 }
 
 .cv {
