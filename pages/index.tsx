@@ -22,7 +22,7 @@ import ImageMotion from '../components/imagemotion';
 import ProjectItem from '../components/projectItem';
 import devfinder from '../public/devfinder.png';
 import advice from '../public/advice.png';
-import landing from '../public/landing.png';
+import shortlink from '../public/shortlink.png';
 import Imagesicon from '../components/imagesicon';
 import up from '../public/arrowUp.svg';
 import copy from '../public/copy.svg';
@@ -452,7 +452,7 @@ const Home: NextPage = () => {
 											cn3: 'Axios',
 											cn4: 'Bootstrap',
 										}}
-										info='In this project, i used NextJS framework to build this page, then I use Axios library to call API from github and use it to render to interface after received information input from user and finally I used BootStrap to decorating'></ProjectItem>
+										info='In this project, i used NextJS framework to build this page, then I use Axios library to fetch API from github and use it to render to interface after received information input from user and finally I used BootStrap and SCSS to decorate'></ProjectItem>
 									<ProjectItem
 										src={advice}
 										name='Advice Generator'
@@ -463,17 +463,17 @@ const Home: NextPage = () => {
 											cn3: 'Axios',
 											cn4: 'Tailwind',
 										}}
-										info='this is the infomation about my pro this is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my pro'></ProjectItem>
+										info='I built this project with NextJS and used Axios to fetch API from database, then render it out to interface and fully decorated with Tailwindcss '></ProjectItem>
 									<ProjectItem
-										src={landing}
-										name='Info Landing Page'
+										src={shortlink}
+										name='Link Shortener'
 										num={3}
 										projects={{
 											cn1: 'JavaScript',
 											cn2: 'HTML',
 											cn3: 'CSS',
 										}}
-										info='this is the infomation about my pro this is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my prothis is the infomation about my pro'></ProjectItem>
+										info='This is project I built using ReactJS, and decorating with SCSS. Get API from shrtcode API to shorten input link '></ProjectItem>
 								</motion.div>
 								<div className='w-full bg-white h-24 z-0 absolute rounded-xl'></div>
 							</motion.div>
