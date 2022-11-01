@@ -4,9 +4,10 @@ import Image from 'next/image';
 type Props = {
 	src: any;
 	variants: any;
+	width: number;
 };
 
-const ImageMotion = ({ variants, src }: Props) => {
+const ImageMotion = ({ variants, src, width }: Props) => {
 	return (
 		<motion.div
 			variants={variants}
@@ -18,7 +19,7 @@ const ImageMotion = ({ variants, src }: Props) => {
 				bounceStiffness: 600,
 				bounceDamping: 10,
 			}}>
-			<Image width={320} src={src} draggable='false' alt='profile' />
+			<Image width={width} src={src} draggable='false' alt='profile' />
 		</motion.div>
 	);
 };

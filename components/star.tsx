@@ -7,9 +7,10 @@ import { Canvas } from '@react-three/fiber';
 type Props = {
 	isLiked: any;
 	isHover: any;
+	pos: number;
 };
 
-function StarIcon({ isLiked, isHover }: Props) {
+function StarIcon({ isLiked, isHover, pos }: Props) {
 	const { nodes } = useGLTF('/star-icon.glb');
 
 	return (
@@ -41,7 +42,7 @@ function StarIcon({ isLiked, isHover }: Props) {
 							scale: 0.9,
 						},
 						liked: {
-							x: 4,
+							x: pos,
 							y: [0, -1.5, 2],
 							scale: 0.9,
 							transition: {
